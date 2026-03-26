@@ -1,5 +1,5 @@
 // ==============================================
-// STEPS — Hiring Process (W1-inspired)
+// STEPS — Premium Box Cards with Scroll Animation
 // ==============================================
 
 @use 'variables' as *;
@@ -36,88 +36,94 @@
     }
   }
 
-  &__timeline {
+  &__grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-    position: relative;
+    gap: $space-md;
 
     @include respond-to(lg) {
-      grid-template-columns: 1fr;
-      gap: $space-lg;
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    // Connecting line
-    &::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: 10%;
-      right: 10%;
-      height: 2px;
-      background: linear-gradient(90deg, $color-primary, rgba($color-primary, 0.3));
-
-      @include respond-to(lg) {
-        top: 0;
-        bottom: 0;
-        left: 28px;
-        right: auto;
-        width: 2px;
-        height: 100%;
-        background: linear-gradient(180deg, $color-primary, rgba($color-primary, 0.3));
-      }
+    @include respond-to(md) {
+      grid-template-columns: 1fr;
+      gap: $space-sm;
     }
   }
 
-  &__step {
-    text-align: center;
-    padding: 0 $space-sm;
+  &__card {
+    background: $color-white;
+    border-radius: $radius-lg;
+    padding: $space-lg $space-md;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 
-    @include respond-to(lg) {
-      text-align: left;
-      padding: 0 0 0 $space-3xl;
+    // Initial state for scroll animation (GSAP handles opacity/y)
+    opacity: 0;
+
+    &:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: rgba($color-primary, 0.25);
+    }
+
+    // Top accent line
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, $color-primary, $color-primary-dark);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover::before,
+    &.revealed::before {
+      transform: scaleX(1);
     }
 
     &-number {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: $color-primary;
-      color: $color-bg-dark;
-      @include flex-center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: $radius-md;
+      background: rgba($color-primary, 0.08);
+      color: $color-primary-dark;
       font-weight: $font-weight-bold;
       font-size: $font-size-lg;
-      margin: 0 auto $space-md;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 0 0 6px $color-bg-light, $shadow-glow;
-      transition: all $transition-base;
-
-      @include respond-to(lg) {
-        position: absolute;
-        left: 0;
-        top: 0;
-        margin: 0;
-        width: 48px;
-        height: 48px;
-      }
+      margin-bottom: $space-md;
+      transition: all 0.3s ease;
+      font-family: $font-family;
     }
 
     &:hover &-number {
-      transform: scale(1.1);
-      box-shadow: 0 0 0 6px $color-bg-light, 0 0 40px rgba($color-primary, 0.4);
+      background: $color-primary;
+      color: $color-bg-dark;
+      transform: scale(1.05); 
     }
 
     &-title {
-      @include heading-card;
+      font-size: $font-size-base;
+      font-weight: $font-weight-semi;
       color: $color-text-dark;
       margin-bottom: $space-xs;
+      line-height: $line-height-tight;
     }
 
     &-desc {
       font-size: $font-size-sm;
-      color: rgba($color-text-dark, 0.6);
+      color: rgba($color-text-dark, 0.55);
       line-height: $line-height-base;
     }
   }

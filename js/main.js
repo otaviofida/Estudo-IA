@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Stagger Grid Items ─────────────────────
-  const grids = document.querySelectorAll('.services__grid, .testimonials__grid');
+  const grids = document.querySelectorAll('.services__grid, .testimonials__grid, .product__features');
 
   grids.forEach(grid => {
     const items = grid.children;
@@ -138,21 +138,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Steps Timeline Stagger ─────────────────
-  const stepsTimeline = document.querySelector('.steps__timeline');
-  if (stepsTimeline) {
-    const steps = stepsTimeline.querySelectorAll('.steps__step');
+  // ── Steps Card Stagger ──────────────────────
+  const stepsGrid = document.querySelector('.steps__grid');
+  if (stepsGrid) {
+    const cards = stepsGrid.querySelectorAll('.steps__card');
     ScrollTrigger.create({
-      trigger: stepsTimeline,
+      trigger: stepsGrid,
       start: 'top 80%',
       once: true,
       onEnter: () => {
-        gsap.to(steps, {
-          opacity: 1,
-          y: 0,
+        gsap.from(cards, {
+          opacity: 0,
+          y: 40,
           duration: 0.6,
-          stagger: 0.2,
+          stagger: 0.12,
           ease: 'power2.out',
+          clearProps: 'transform',
+          onComplete: () => {
+            cards.forEach(card => {
+              card.style.opacity = '1';
+              card.classList.add('revealed');
+            });
+          }
         });
       }
     });
