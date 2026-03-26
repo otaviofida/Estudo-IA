@@ -1,0 +1,142 @@
+// ==============================================
+// STEPS — Hiring Process (W1-inspired)
+// ==============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.steps {
+  @include section-padding;
+  background: $color-bg-light;
+  color: $color-text-dark;
+
+  &__inner {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $space-3xl;
+
+    .section-label {
+      color: $color-primary-dark;
+
+      &::before {
+        background: $color-primary-dark;
+      }
+    }
+
+    .section-title {
+      color: $color-text-dark;
+    }
+
+    .section-subtitle {
+      color: rgba($color-text-dark, 0.6);
+      margin: 0 auto;
+    }
+  }
+
+  &__timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    position: relative;
+
+    @include respond-to(lg) {
+      grid-template-columns: 1fr;
+      gap: $space-lg;
+    }
+
+    // Connecting line
+    &::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, $color-primary, rgba($color-primary, 0.3));
+
+      @include respond-to(lg) {
+        top: 0;
+        bottom: 0;
+        left: 28px;
+        right: auto;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, $color-primary, rgba($color-primary, 0.3));
+      }
+    }
+  }
+
+  &__step {
+    text-align: center;
+    padding: 0 $space-sm;
+    position: relative;
+
+    @include respond-to(lg) {
+      text-align: left;
+      padding: 0 0 0 $space-3xl;
+    }
+
+    &-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: $color-primary;
+      color: $color-bg-dark;
+      @include flex-center;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-lg;
+      margin: 0 auto $space-md;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 0 6px $color-bg-light, $shadow-glow;
+      transition: all $transition-base;
+
+      @include respond-to(lg) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    &:hover &-number {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 6px $color-bg-light, 0 0 40px rgba($color-primary, 0.4);
+    }
+
+    &-title {
+      @include heading-card;
+      color: $color-text-dark;
+      margin-bottom: $space-xs;
+    }
+
+    &-desc {
+      font-size: $font-size-sm;
+      color: rgba($color-text-dark, 0.6);
+      line-height: $line-height-base;
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    margin-top: $space-3xl;
+
+    a {
+      @include btn-base;
+      background: $color-primary;
+      color: $color-bg-dark;
+      padding: 1rem 2.5rem;
+
+      &:hover {
+        background: $color-primary-dark;
+        box-shadow: $shadow-glow;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

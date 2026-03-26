@@ -1,0 +1,198 @@
+// ==============================================
+// MIXINS & UTILITIES
+// ==============================================
+
+@use 'variables' as *;
+
+// ── Responsive Breakpoints ──────────────────
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: $bp-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: $bp-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: $bp-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: $bp-xl) { @content; }
+  }
+}
+
+@mixin min-width($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $bp-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $bp-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $bp-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $bp-xl) { @content; }
+  }
+}
+
+// ── Layout ──────────────────────────────────
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding-left: $container-pad;
+  padding-right: $container-pad;
+}
+
+@mixin container-wide {
+  width: 100%;
+  max-width: $container-wide;
+  margin: 0 auto;
+  padding-left: $container-pad;
+  padding-right: $container-pad;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// ── Typography ──────────────────────────────
+@mixin heading-hero {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: $font-weight-thin;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+}
+
+@mixin heading-section {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: $font-weight-semi;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+}
+
+@mixin heading-card {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: $font-weight-semi;
+  line-height: $line-height-tight;
+}
+
+@mixin text-body {
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+}
+
+@mixin text-small {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+}
+
+@mixin label-text {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semi;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wider;
+}
+
+// ── Buttons ─────────────────────────────────
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-family: $font-family;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semi;
+  text-decoration: none;
+  border: none;
+  border-radius: $radius-full;
+  cursor: pointer;
+  transition: all $transition-base;
+  letter-spacing: $letter-spacing-wide;
+  text-transform: uppercase;
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background: $color-primary;
+  color: $color-bg-dark;
+
+  &:hover {
+    background: $color-primary-dark;
+    box-shadow: $shadow-glow;
+    transform: translateY(-2px);
+  }
+}
+
+@mixin btn-outline {
+  @include btn-base;
+  background: transparent;
+  color: $color-white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  &:hover {
+    border-color: $color-primary;
+    color: $color-primary;
+    transform: translateY(-2px);
+  }
+}
+
+@mixin btn-accent {
+  @include btn-base;
+  background: $color-accent;
+  color: $color-white;
+
+  &:hover {
+    background: $color-accent-dark;
+    transform: translateY(-2px);
+  }
+}
+
+// ── Effects ─────────────────────────────────
+@mixin glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid $color-border;
+}
+
+@mixin glass-card {
+  @include glass;
+  border-radius: $radius-lg;
+  padding: $space-lg;
+}
+
+@mixin gradient-overlay {
+  background: linear-gradient(
+    180deg,
+    $color-overlay-heavy 0%,
+    $color-overlay 40%,
+    $color-overlay 60%,
+    $color-overlay-heavy 100%
+  );
+}
+
+// ── Section Spacing ─────────────────────────
+@mixin section-padding {
+  padding: clamp(4rem, 10vw, 8rem) 0;
+}
+
+@mixin section-dark {
+  background: $color-bg-dark;
+  color: $color-text-light;
+}
+
+@mixin section-light {
+  background: $color-bg-light;
+  color: $color-text-dark;
+}
+
+// ── Animations (initial states for GSAP) ────
+@mixin reveal-initial {
+  opacity: 0;
+  transform: translateY(40px);
+}

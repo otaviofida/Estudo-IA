@@ -1,0 +1,143 @@
+// ==============================================
+// FOOTER — Multi-column Dark
+// Inspired by: W1 + Valid
+// ==============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.footer {
+  background: $color-bg-darker;
+  border-top: 1px solid $color-border;
+
+  &__main {
+    @include container;
+    padding: $space-3xl 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: $space-2xl;
+
+    @include respond-to(lg) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__brand {
+    &-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: $space-md;
+
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+
+      span {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        color: $color-white;
+
+        .accent {
+          color: $color-primary;
+        }
+      }
+    }
+
+    &-desc {
+      @include text-small;
+      color: $color-text-muted;
+      max-width: 300px;
+      margin-bottom: $space-md;
+    }
+
+    &-social {
+      display: flex;
+      gap: $space-sm;
+    }
+
+    &-social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      @include flex-center;
+      border: 1px solid $color-border;
+      color: $color-text-muted;
+      transition: all $transition-fast;
+
+      &:hover {
+        border-color: $color-primary;
+        color: $color-primary;
+        background: rgba($color-primary, 0.1);
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &__col {
+    &-title {
+      @include label-text;
+      color: $color-white;
+      margin-bottom: $space-md;
+    }
+
+    &-links {
+      display: flex;
+      flex-direction: column;
+      gap: $space-xs;
+    }
+
+    &-link {
+      @include text-small;
+      color: $color-text-muted;
+      transition: color $transition-fast;
+      padding: 0.25rem 0;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__bottom {
+    @include container;
+    padding: $space-md 0;
+    border-top: 1px solid $color-border;
+    @include flex-between;
+
+    @include respond-to(md) {
+      flex-direction: column;
+      gap: $space-sm;
+      text-align: center;
+    }
+  }
+
+  &__copy {
+    @include text-small;
+    color: $color-text-muted;
+  }
+
+  &__bottom-links {
+    display: flex;
+    gap: $space-md;
+  }
+
+  &__bottom-link {
+    @include text-small;
+    color: $color-text-muted;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

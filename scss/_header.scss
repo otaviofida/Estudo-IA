@@ -1,0 +1,175 @@
+// ==============================================
+// HEADER / NAV — Transparent + Blur on scroll
+// Inspired by: Monashees + W1
+// ==============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-header;
+  padding: $space-md 0;
+  transition: all $transition-base;
+
+  &.scrolled {
+    padding: $space-xs 0;
+    @include glass;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__inner {
+    @include container;
+    @include flex-between;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    &-icon {
+      width: 42px;
+      height: 42px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-text {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $color-white;
+      letter-spacing: $letter-spacing-tight;
+
+      span {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: $space-lg;
+
+    @include respond-to(lg) {
+      display: none;
+    }
+  }
+
+  &__link {
+    @include text-small;
+    color: $color-text-muted;
+    transition: color $transition-fast;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $color-primary;
+      transition: width $transition-base;
+    }
+
+    &:hover {
+      color: $color-white;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__cta {
+    @include btn-primary;
+    padding: 0.65rem 1.5rem;
+    font-size: $font-size-xs;
+
+    @include respond-to(lg) {
+      display: none;
+    }
+  }
+
+  &__mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0.5rem;
+
+    @include respond-to(lg) {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $color-white;
+      transition: all $transition-fast;
+    }
+  }
+}
+
+// Mobile menu
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: $color-bg-darker;
+  z-index: $z-modal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-lg;
+  transition: right $transition-slow;
+
+  &.active {
+    right: 0;
+  }
+
+  &__close {
+    position: absolute;
+    top: $space-lg;
+    right: $space-lg;
+    color: $color-white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 44px;
+    height: 44px;
+    @include flex-center;
+  }
+
+  &__link {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-light;
+    color: $color-text-muted;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__cta {
+    @include btn-primary;
+    margin-top: $space-md;
+  }
+}

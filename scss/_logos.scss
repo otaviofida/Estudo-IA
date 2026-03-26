@@ -1,0 +1,74 @@
+// ==============================================
+// LOGO GRID — Partner/Client Logos
+// Inspired by: Monashees
+// ==============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.logos {
+  @include section-padding;
+  @include section-dark;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    @include container;
+    text-align: center;
+  }
+
+  &__label {
+    @include label-text;
+    color: $color-text-muted;
+    margin-bottom: $space-2xl;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: $space-xl;
+    align-items: center;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $space-lg;
+    }
+
+    &--image {
+      display: block;
+      text-align: center;
+      
+      img {
+        max-width: 100%;
+        width: 800px;
+        margin: 0 auto;
+        opacity: 0.7;
+        filter: grayscale(0.3) brightness(1.2);
+        transition: opacity $transition-base;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__item {
+    @include flex-center;
+    padding: $space-sm;
+    opacity: 0.4;
+    transition: opacity $transition-base;
+    filter: grayscale(1) brightness(2);
+
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0) brightness(1);
+    }
+
+    img {
+      max-height: 40px;
+      width: auto;
+      max-width: 140px;
+    }
+  }
+}

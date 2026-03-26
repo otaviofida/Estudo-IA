@@ -1,0 +1,87 @@
+// ==============================================
+// BASE STYLES
+// ==============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+  color: $color-text-light;
+  background: $color-bg-dark;
+}
+
+::selection {
+  background: $color-primary;
+  color: $color-bg-dark;
+}
+
+// ── Section Label (eyebrow text) ────────────
+.section-label {
+  @include label-text;
+  color: $color-primary;
+  margin-bottom: $space-sm;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: $color-primary;
+  }
+}
+
+// ── Section Title ───────────────────────────
+.section-title {
+  @include heading-section;
+  margin-bottom: $space-md;
+}
+
+.section-subtitle {
+  @include text-body;
+  color: $color-text-muted;
+  max-width: 600px;
+}
+
+// ── Container ───────────────────────────────
+.container {
+  @include container;
+}
+
+.container-wide {
+  @include container-wide;
+}
+
+// ── Buttons ─────────────────────────────────
+.btn-primary {
+  @include btn-primary;
+}
+
+.btn-outline {
+  @include btn-outline;
+}
+
+.btn-accent {
+  @include btn-accent;
+}
+
+// ── GSAP Reveal ─────────────────────────────
+.reveal {
+  @include reveal-initial;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}

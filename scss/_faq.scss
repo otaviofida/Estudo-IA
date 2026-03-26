@@ -1,0 +1,113 @@
+// ==============================================
+// FAQ — Accordion (W1-inspired)
+// ==============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.faq {
+  @include section-padding;
+  background: $color-bg-light;
+  color: $color-text-dark;
+
+  &__inner {
+    @include container;
+    max-width: 800px;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $space-3xl;
+
+    .section-label {
+      color: $color-primary-dark;
+
+      &::before {
+        background: $color-primary-dark;
+      }
+    }
+
+    .section-title {
+      color: $color-text-dark;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  &__item {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: $radius-lg;
+    background: $color-white;
+    overflow: hidden;
+    transition: all $transition-base;
+
+    &:hover {
+      border-color: rgba($color-primary, 0.3);
+    }
+
+    &.active {
+      border-color: rgba($color-primary, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+      .faq__question-icon {
+        transform: rotate(45deg);
+        color: $color-primary-dark;
+      }
+    }
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-md;
+    padding: $space-md $space-lg;
+    cursor: pointer;
+    transition: background $transition-fast;
+    user-select: none;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    &-text {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semi;
+      color: $color-text-dark;
+      line-height: $line-height-tight;
+    }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      color: $color-text-muted;
+      transition: all $transition-base;
+      font-size: 1.5rem;
+      line-height: 1;
+      @include flex-center;
+    }
+  }
+
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &-inner {
+      padding: 0 $space-lg $space-lg;
+      font-size: $font-size-base;
+      color: rgba($color-text-dark, 0.7);
+      line-height: $line-height-loose;
+    }
+  }
+
+  &__item.active &__answer {
+    max-height: 500px;
+  }
+}

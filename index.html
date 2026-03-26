@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Soluções em energia solar para empresas. Reduza até 95% da sua conta de energia com usinas solares fotovoltaicas sob medida para o seu negócio.">
+  <title>SolarPrime — Energia Solar para Empresas | Soluções B2B</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <!-- ========================================
+       HEADER
+  ========================================= -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <div class="header__logo-icon">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="21" cy="21" r="20" stroke="#00D4AA" stroke-width="2"/>
+            <path d="M21 6 L21 21 L33 28" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="21" cy="21" r="5" fill="#00D4AA" opacity="0.3"/>
+            <path d="M14 10 Q21 4 28 10" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M10 16 Q6 21 10 26" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M32 16 Q36 21 32 26" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <span class="header__logo-text">Solar<span>Prime</span></span>
+      </a>
+
+      <nav class="header__nav">
+        <a href="#product" class="header__link">Produto</a>
+        <a href="#services" class="header__link">Soluções</a>
+        <a href="#stats" class="header__link">Resultados</a>
+        <a href="#testimonials" class="header__link">Clientes</a>
+        <a href="#faq" class="header__link">FAQ</a>
+      </nav>
+
+      <a href="#contact" class="header__cta">
+        Solicitar Orçamento
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <button class="header__mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileClose" aria-label="Fechar">✕</button>
+    <a href="#product" class="mobile-menu__link">Produto</a>
+    <a href="#services" class="mobile-menu__link">Soluções</a>
+    <a href="#stats" class="mobile-menu__link">Resultados</a>
+    <a href="#testimonials" class="mobile-menu__link">Clientes</a>
+    <a href="#faq" class="mobile-menu__link">FAQ</a>
+    <a href="#contact" class="mobile-menu__cta">Solicitar Orçamento</a>
+  </div>
+
+  <!-- ========================================
+       HERO
+  ========================================= -->
+  <section class="hero" id="hero">
+    <div class="hero__video-wrap">
+      <video autoplay muted loop playsinline poster="">
+        <source src="https://assets.mixkit.co/videos/1170/1170-720.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__grain"></div>
+
+    <div class="hero__content">
+      <span class="hero__label">Energia Solar B2B</span>
+      <h1 class="hero__title">
+        Transforme o sol em <span>economia real</span> para sua empresa
+      </h1>
+      <p class="hero__subtitle">
+        Projetos de usinas solares fotovoltaicas sob medida. Reduza até 95% da sua conta de energia e aumente a competitividade do seu negócio.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="hero__cta">
+          Simular Economia
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#services" class="hero__cta-secondary">
+          Conheça Nossas Soluções
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span>Explore</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       LOGOS (Social Proof) — Now with image
+  ========================================= -->
+    <section class="logos" id="logos">
+    <div class="logos__inner">
+      <span class="logos__label">Empresas que confiam na SolarPrime</span>
+      <div class="logos__grid">
+        <div class="logos__item reveal">
+          <img src="https://logodownload.org/wp-content/uploads/2017/09/ambev-logo.png" alt="">
+        </div>
+        <div class="logos__item reveal">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Votorantim.png" alt="">
+        </div>
+        <div class="logos__item reveal">
+          <img src="https://logodownload.org/wp-content/uploads/2014/05/gerdau-logo-1-1.png" alt="">
+        </div>
+        <div class="logos__item reveal">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/WEG_Equipamentos_El%C3%A9tricos.svg" alt="">
+        </div>
+        <div class="logos__item reveal">
+          <img src="https://logodownload.org/wp-content/uploads/2017/09/brf-logo.png" alt="">
+        </div>
+        <div class="logos__item reveal">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Localiza_logo_2022.svg/3840px-Localiza_logo_2022.svg.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PRODUCT SHOWCASE (Silicon-inspired)
+  ========================================= -->
+  <section class="product" id="product">
+    <div class="product__inner">
+      <div class="product__content reveal-left">
+        <span class="section-label">Usinas Solares</span>
+        <h2 class="product__title">
+          Usinas solares a preço de custo com importação direta
+        </h2>
+        <p class="product__desc">
+          Com um projeto totalmente personalizado para sua empresa, construímos usinas fotovoltaicas de alta performance que geram economia desde o primeiro mês de operação.
+        </p>
+
+        <div class="product__features">
+          <div class="product__feature">
+            <svg class="product__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <p class="product__feature-text"><strong>Módulos TIER 1</strong> — equipamentos dos melhores fabricantes globais</p>
+          </div>
+          <div class="product__feature">
+            <svg class="product__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <p class="product__feature-text"><strong>Financiamento em até 8 anos</strong> — parcela menor que a economia gerada</p>
+          </div>
+          <div class="product__feature">
+            <svg class="product__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <p class="product__feature-text"><strong>Garantia de 10 anos</strong> — performance assegurada de longo prazo</p>
+          </div>
+          <div class="product__feature">
+            <svg class="product__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <p class="product__feature-text"><strong>Rendimento de 1,4 a 2,3% ao mês</strong> — retorno financeiro garantido</p>
+          </div>
+        </div>
+
+        <div class="product__actions">
+          <a href="#contact" class="product__cta">
+            Conheça Nossos Projetos
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="product__cta-secondary">Fale com a gente</a>
+        </div>
+      </div>
+
+      <div class="product__visual reveal-right">
+        <img src="assets/solar-panels.png" alt="Instalação de painéis solares em telhado industrial" class="product__visual-img">
+        <div class="product__visual-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Economia de até 95%
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SERVICES — Timeline Layout
+  ========================================= -->
+  <section class="services" id="services">
+    <div class="services__inner">
+      <div class="services__header">
+        <span class="section-label">Nossas Soluções</span>
+        <h2 class="section-title">Energia solar sob medida<br>para cada tipo de negócio</h2>
+        <p class="section-subtitle">
+          Da análise de viabilidade à instalação e monitoramento. Uma solução completa para a transição energética da sua empresa.
+        </p>
+      </div>
+
+      <div class="services__timeline">
+        <!-- Item 1 -->
+        <div class="services__item reveal">
+          <div class="services__item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="8" width="20" height="8" rx="1"/>
+              <line x1="6" y1="8" x2="6" y2="16"/>
+              <line x1="10" y1="8" x2="10" y2="16"/>
+              <line x1="14" y1="8" x2="14" y2="16"/>
+              <line x1="18" y1="8" x2="18" y2="16"/>
+              <line x1="12" y1="2" x2="12" y2="5"/>
+              <line x1="8" y1="3" x2="10" y2="5"/>
+              <line x1="16" y1="3" x2="14" y2="5"/>
+            </svg>
+          </div>
+          <h3 class="services__item-title">Usinas Solares</h3>
+          <p class="services__item-desc">
+            Projetos de usinas fotovoltaicas com importação direta de equipamentos de fabricantes TIER 1. Financiamento em até 8 anos com economia imediata desde o primeiro mês.
+          </p>
+          <a href="#contact" class="services__item-link">
+            Saiba mais
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="services__item reveal">
+          <div class="services__item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3 class="services__item-title">Eficiência Energética</h3>
+          <p class="services__item-desc">
+            Diagnóstico energético completo e soluções LED profissionais de alta eficiência. Redução significativa do consumo da sua operação industrial com retorno rápido.
+          </p>
+          <a href="#contact" class="services__item-link">
+            Saiba mais
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="services__item reveal">
+          <div class="services__item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3 class="services__item-title">Manutenção & Monitoramento</h3>
+          <p class="services__item-desc">
+            Acompanhamento em tempo real da geração de energia via plataforma própria. Manutenção preventiva programada para garantir performance máxima da sua usina por décadas.
+          </p>
+          <a href="#contact" class="services__item-link">
+            Saiba mais
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       STATS
+  ========================================= -->
+  <section class="stats" id="stats">
+    <div class="stats__inner">
+      <div class="stats__header">
+        <span class="section-label">Resultados Comprovados</span>
+        <h2 class="section-title">Números que falam por si</h2>
+      </div>
+
+      <div class="stats__grid">
+        <div class="stats__item reveal">
+          <div class="stats__item-number">
+            <span class="counter" data-target="150">0</span><span class="suffix">MW</span>
+          </div>
+          <p class="stats__item-label">Potência instalada</p>
+        </div>
+        <div class="stats__item reveal">
+          <div class="stats__item-number">
+            <span class="counter" data-target="500">0</span><span class="suffix">+</span>
+          </div>
+          <p class="stats__item-label">Projetos entregues</p>
+        </div>
+        <div class="stats__item reveal">
+          <div class="stats__item-number">
+            <span class="counter" data-target="95">0</span><span class="suffix">%</span>
+          </div>
+          <p class="stats__item-label">Economia média gerada</p>
+        </div>
+        <div class="stats__item reveal">
+          <div class="stats__item-number">
+            <span class="counter" data-target="12">0</span><span class="suffix"> anos</span>
+          </div>
+          <p class="stats__item-label">De experiência no mercado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       STEPS — Passo a Passo (W1-inspired)
+  ========================================= -->
+  <section class="steps" id="steps">
+    <div class="steps__inner">
+      <div class="steps__header">
+        <span class="section-label">Como funciona</span>
+        <h2 class="section-title">Seu projeto de energia solar<br>em 5 passos simples</h2>
+        <p class="section-subtitle">
+          Do primeiro contato à sua usina gerando energia. Um processo transparente e acompanhado por especialistas.
+        </p>
+      </div>
+
+      <div class="steps__timeline">
+        <div class="steps__step reveal">
+          <div class="steps__step-number">1</div>
+          <h3 class="steps__step-title">Contato Inicial</h3>
+          <p class="steps__step-desc">Preencha nosso formulário ou entre em contato. Nossa equipe técnica responde em até 24h para entender suas necessidades.</p>
+        </div>
+
+        <div class="steps__step reveal">
+          <div class="steps__step-number">2</div>
+          <h3 class="steps__step-title">Análise Técnica</h3>
+          <p class="steps__step-desc">Realizamos o estudo de viabilidade do seu projeto, analisando consumo, área disponível e condições de irradiação solar.</p>
+        </div>
+
+        <div class="steps__step reveal">
+          <div class="steps__step-number">3</div>
+          <h3 class="steps__step-title">Proposta Personalizada</h3>
+          <p class="steps__step-desc">Você recebe uma proposta completa com projeção de economia, prazo de retorno e opções de financiamento sob medida.</p>
+        </div>
+
+        <div class="steps__step reveal">
+          <div class="steps__step-number">4</div>
+          <h3 class="steps__step-title">Instalação</h3>
+          <p class="steps__step-desc">Equipe própria realiza toda a instalação e conexão com a rede elétrica, seguindo rigorosos padrões de qualidade e segurança.</p>
+        </div>
+
+        <div class="steps__step reveal">
+          <div class="steps__step-number">5</div>
+          <h3 class="steps__step-title">Monitoramento</h3>
+          <p class="steps__step-desc">Acompanhe a geração de energia em tempo real pelo nosso app. Manutenção preventiva inclusa para performance máxima.</p>
+        </div>
+      </div>
+
+      <div class="steps__cta reveal">
+        <a href="#contact">
+          Iniciar meu projeto agora
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONIALS
+  ========================================= -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials__inner">
+      <div class="testimonials__header">
+        <span class="section-label">O que dizem nossos clientes</span>
+        <h2 class="section-title">Resultados reais,<br>empresas reais</h2>
+      </div>
+
+      <div class="testimonials__grid">
+        <div class="testimonials__card reveal">
+          <p class="testimonials__card-quote">
+            A usina solar que a SolarPrime construiu para nossa indústria já está gerando uma economia de R$ 85 mil por mês. O investimento se pagou em menos de 3 anos.
+          </p>
+          <div class="testimonials__card-author">
+            <div class="testimonials__card-avatar">RM</div>
+            <div class="testimonials__card-info">
+              <span class="testimonials__card-name">Roberto Mendes</span>
+              <span class="testimonials__card-role">CEO — Indústria MetalSul</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials__card reveal">
+          <p class="testimonials__card-quote">
+            A equipe da SolarPrime cuidou de tudo: desde a análise de viabilidade até o monitoramento pós-instalação. Profissionalismo impecável e resultados acima do esperado.
+          </p>
+          <div class="testimonials__card-author">
+            <div class="testimonials__card-avatar">AP</div>
+            <div class="testimonials__card-info">
+              <span class="testimonials__card-name">Ana Paula Ferreira</span>
+              <span class="testimonials__card-role">Diretora Financeira — Grupo Horizonte</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials__card reveal">
+          <p class="testimonials__card-quote">
+            Escolhemos a SolarPrime após um rigoroso processo de seleção. A usina fotovoltaica foi entregue dentro do prazo contratado, representando um passo importante na sustentabilidade.
+          </p>
+          <div class="testimonials__card-author">
+            <div class="testimonials__card-avatar">CF</div>
+            <div class="testimonials__card-info">
+              <span class="testimonials__card-name">Carlos Figueiredo</span>
+              <span class="testimonials__card-role">Presidente — Logistics Express</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FAQ — Perguntas Frequentes (W1-inspired)
+  ========================================= -->
+  <section class="faq" id="faq">
+    <div class="faq__inner">
+      <div class="faq__header">
+        <span class="section-label">Tire suas dúvidas</span>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+      </div>
+
+      <div class="faq__list">
+        <div class="faq__item active">
+          <div class="faq__question" role="button" tabindex="0">
+            <span class="faq__question-text">Quanto custa instalar uma usina solar na minha empresa?</span>
+            <span class="faq__question-icon">+</span>
+          </div>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              O investimento depende do porte da sua operação, consumo energético e área disponível. Trabalhamos com projetos a partir de R$ 150 mil, com financiamento em até 8 anos. A parcela do financiamento costuma ser menor do que a economia gerada, ou seja, você começa a economizar desde o primeiro mês.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question" role="button" tabindex="0">
+            <span class="faq__question-text">Em quanto tempo o investimento se paga?</span>
+            <span class="faq__question-icon">+</span>
+          </div>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              O payback médio para projetos B2B é de 3 a 5 anos, dependendo da região, tarifa de energia e condições de financiamento. Considerando que a vida útil dos painéis é de 25+ anos, seu retorno sobre o investimento é excepcional.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question" role="button" tabindex="0">
+            <span class="faq__question-text">Qual a manutenção necessária de uma usina solar?</span>
+            <span class="faq__question-icon">+</span>
+          </div>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              A manutenção é mínima e de baixo custo. Consiste basicamente na limpeza periódica dos módulos e inspeções elétricas preventivas. Nosso plano de manutenção inclui monitoramento 24/7 e visitas técnicas programadas para garantir a máxima eficiência da sua usina.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question" role="button" tabindex="0">
+            <span class="faq__question-text">Minha empresa pode gerar mais energia do que consome?</span>
+            <span class="faq__question-icon">+</span>
+          </div>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              Sim! O excedente de energia gerada é injetado na rede da distribuidora e convertido em créditos energéticos, que podem ser utilizados em até 60 meses. Esses créditos podem ser aplicados em outras unidades consumidoras da mesma titularidade.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question" role="button" tabindex="0">
+            <span class="faq__question-text">Vocês atuam em todo o Brasil?</span>
+            <span class="faq__question-icon">+</span>
+          </div>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              Sim, atendemos empresas em todo o território nacional. Temos equipes regionais e parceiros técnicos certificados em todas as regiões do Brasil, garantindo atendimento ágil e suporte local para instalação e manutenção.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question" role="button" tabindex="0">
+            <span class="faq__question-text">Quais são as formas de financiamento disponíveis?</span>
+            <span class="faq__question-icon">+</span>
+          </div>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              Oferecemos diversas opções: financiamento próprio em até 8 anos, parcerias com bancos como BNDES e BNB, e modalidades de leasing energético. Em todos os casos, estruturamos para que a parcela seja inferior à economia gerada na conta de energia.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       CTA BANNER
+  ========================================= -->
+  <section class="cta-banner" id="contact">
+    <div class="cta-banner__inner">
+      <span class="section-label">Pronto para economizar?</span>
+      <h2 class="cta-banner__title reveal">
+        Simule gratuitamente o projeto de energia solar da sua empresa
+      </h2>
+      <p class="cta-banner__subtitle reveal">
+        Receba um estudo personalizado com projeção de economia e retorno do investimento.
+      </p>
+      <div class="cta-banner__actions reveal">
+        <a href="#" class="cta-banner__btn">
+          Solicitar Simulação Gratuita
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://wa.me/5541999999999" class="cta-banner__btn-secondary" target="_blank">
+          Falar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
+  <footer class="footer">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <svg width="36" height="36" viewBox="0 0 42 42" fill="none">
+            <circle cx="21" cy="21" r="20" stroke="#00D4AA" stroke-width="2"/>
+            <path d="M21 6 L21 21 L33 28" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="21" cy="21" r="5" fill="#00D4AA" opacity="0.3"/>
+          </svg>
+          <span>Solar<span class="accent">Prime</span></span>
+        </div>
+        <p class="footer__brand-desc">
+          Soluções em energia solar fotovoltaica para empresas que buscam economia, sustentabilidade e competitividade.
+        </p>
+        <div class="footer__brand-social">
+          <a href="#" class="footer__brand-social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="footer__brand-social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer__brand-social-link" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__col-title">Soluções</h4>
+        <div class="footer__col-links">
+          <a href="#" class="footer__col-link">Usinas Solares</a>
+          <a href="#" class="footer__col-link">Eficiência Energética</a>
+          <a href="#" class="footer__col-link">Manutenção</a>
+          <a href="#" class="footer__col-link">Monitoramento</a>
+          <a href="#" class="footer__col-link">Financiamento</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__col-title">Empresa</h4>
+        <div class="footer__col-links">
+          <a href="#" class="footer__col-link">Sobre nós</a>
+          <a href="#" class="footer__col-link">Casos de Sucesso</a>
+          <a href="#" class="footer__col-link">Blog</a>
+          <a href="#" class="footer__col-link">Carreiras</a>
+          <a href="#" class="footer__col-link">Contato</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__col-title">Contato</h4>
+        <div class="footer__col-links">
+          <a href="tel:+5541999999999" class="footer__col-link">(41) 99999-9999</a>
+          <a href="mailto:contato@solarprime.com.br" class="footer__col-link">contato@solarprime.com.br</a>
+          <span class="footer__col-link">Curitiba, PR — Brasil</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 SolarPrime. Todos os direitos reservados.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link">Política de Privacidade</a>
+        <a href="#" class="footer__bottom-link">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

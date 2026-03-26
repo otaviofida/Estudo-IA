@@ -1,0 +1,150 @@
+// ==============================================
+// SERVICES — Split Layout + Vertical Timeline
+// Inspired by: jjplastica rinoplastia timeline
+// ==============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.services {
+  @include section-padding;
+  background: linear-gradient(180deg, $color-bg-dark 0%, $color-gradient-end 100%);
+
+  &__inner {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-3xl;
+    align-items: start;
+
+    @include respond-to(lg) {
+      grid-template-columns: 1fr;
+      gap: $space-xl;
+    }
+  }
+
+  // Left side — sticky title
+  &__header {
+    text-align: left;
+    position: sticky;
+    top: 120px;
+
+    @include respond-to(lg) {
+      position: static;
+    }
+  }
+
+  &__header .section-subtitle {
+    margin: 0;
+  }
+
+  // Right side — timeline
+  &__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: $space-xl;
+    padding-bottom: $space-2xl;
+    border-left: 2px solid rgba($color-primary, 0.3);
+    transition: border-color $transition-base;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    &:hover {
+      border-left-color: $color-primary;
+    }
+
+    // Dot on the line
+    &::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: -6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $color-bg-dark;
+      border: 2px solid rgba($color-primary, 0.4);
+      transition: all $transition-base;
+      z-index: 2;
+    }
+
+    &:hover::before {
+      background: $color-primary;
+      border-color: $color-primary;
+      box-shadow: 0 0 15px rgba($color-primary, 0.4);
+    }
+
+    &-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: $radius-md;
+      background: rgba($color-primary, 0.1);
+      color: $color-primary;
+      margin-bottom: $space-sm;
+      transition: all $transition-base;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &:hover &-icon {
+      background: $color-primary;
+      color: $color-bg-dark;
+    }
+
+    &-title {
+      @include heading-card;
+      color: $color-primary;
+      margin-bottom: $space-xs;
+      transition: color $transition-base;
+    }
+
+    &:hover &-title {
+      color: $color-white;
+    }
+
+    &-desc {
+      @include text-body;
+      color: $color-text-muted;
+      line-height: $line-height-loose;
+      margin-bottom: $space-sm;
+    }
+
+    &-link {
+      @include label-text;
+      color: rgba($color-primary, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all $transition-fast;
+
+      &:hover {
+        color: $color-primary;
+        gap: 0.75rem;
+      }
+
+      svg {
+        width: 14px;
+        height: 14px;
+        transition: transform $transition-fast;
+      }
+
+      &:hover svg {
+        transform: translateX(3px);
+      }
+    }
+  }
+}
