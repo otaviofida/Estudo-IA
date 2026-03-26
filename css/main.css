@@ -1039,6 +1039,65 @@ body {
   color: #8892A0;
 }
 
+.gallery {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: #0A0E17;
+}
+.gallery__track {
+  display: flex;
+  width: max-content;
+  animation: galleryScroll 30s linear infinite;
+}
+.gallery__track:hover {
+  animation-play-state: paused;
+}
+.gallery__slide {
+  flex-shrink: 0;
+  width: 20vw;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+@media (max-width: 992px) {
+  .gallery__slide {
+    width: 40vw;
+    height: 220px;
+  }
+}
+@media (max-width: 768px) {
+  .gallery__slide {
+    width: 60vw;
+    height: 200px;
+  }
+}
+.gallery__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.gallery__slide:hover img {
+  transform: scale(1.05);
+}
+.gallery__slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 14, 23, 0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+@keyframes galleryScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .steps {
   padding: clamp(4rem, 10vw, 8rem) 0;
   background: #F5F7FA;
@@ -1379,42 +1438,64 @@ body {
 }
 
 .cta-banner {
-  padding: clamp(4rem, 10vw, 8rem) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .cta-banner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}
+.cta-banner__image {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(0, 184, 148, 0.15), rgba(0, 212, 170, 0.08));
 }
-.cta-banner::before {
-  content: "";
-  position: absolute;
-  top: -30%;
-  right: -10%;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 212, 170, 0.1);
-  pointer-events: none;
+@media (max-width: 992px) {
+  .cta-banner__image {
+    height: 350px;
+  }
 }
-.cta-banner::after {
-  content: "";
-  position: absolute;
-  bottom: -40%;
-  left: -5%;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 212, 170, 0.06);
-  pointer-events: none;
-}
-.cta-banner__inner {
+.cta-banner__image img {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-left: clamp(1.5rem, 4vw, 4rem);
-  padding-right: clamp(1.5rem, 4vw, 4rem);
-  text-align: center;
-  position: relative;
-  z-index: 2;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cta-banner__image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  background: linear-gradient(to right, transparent, #0A0E17);
+  pointer-events: none;
+}
+@media (max-width: 992px) {
+  .cta-banner__image::after {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, #0A0E17);
+  }
+}
+.cta-banner__content {
+  background: #0A0E17;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 6rem 6rem 4rem;
+}
+@media (max-width: 992px) {
+  .cta-banner__content {
+    padding: 4rem clamp(1.5rem, 4vw, 4rem);
+  }
 }
 .cta-banner__title {
   font-size: clamp(2rem, 4vw, 3.5rem);
@@ -1423,9 +1504,7 @@ body {
   letter-spacing: -0.02em;
   color: #FFFFFF;
   margin-bottom: 1.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
 }
 .cta-banner__subtitle {
   font-size: 1rem;
@@ -1433,13 +1512,11 @@ body {
   line-height: 1.7;
   color: #8892A0;
   margin-bottom: 3rem;
+  line-height: 1.9;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .cta-banner__actions {
   display: flex;
-  justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
@@ -1466,10 +1543,6 @@ body {
   box-shadow: 0 0 30px rgba(0, 212, 170, 0.25);
   transform: translateY(-2px);
 }
-.cta-banner__btn {
-  padding: 1rem 2.5rem;
-  font-size: 0.875rem;
-}
 .cta-banner__btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -1493,10 +1566,6 @@ body {
   border-color: #00D4AA;
   color: #00D4AA;
   transform: translateY(-2px);
-}
-.cta-banner__btn-secondary {
-  padding: 1rem 2.5rem;
-  font-size: 0.875rem;
 }
 
 .footer {

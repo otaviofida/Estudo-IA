@@ -26,17 +26,7 @@
   <header class="header" id="header">
     <div class="header__inner">
       <a href="/" class="header__logo">
-        <div class="header__logo-icon">
-          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="21" cy="21" r="20" stroke="#00D4AA" stroke-width="2"/>
-            <path d="M21 6 L21 21 L33 28" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="21" cy="21" r="5" fill="#00D4AA" opacity="0.3"/>
-            <path d="M14 10 Q21 4 28 10" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M10 16 Q6 21 10 26" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M32 16 Q36 21 32 26" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
-        </div>
-        <span class="header__logo-text">Solar<span>Prime</span></span>
+        <img src="assets/logo2.svg" alt="" style="height: 40px;">
       </a>
 
       <nav class="header__nav">
@@ -305,6 +295,25 @@
   </section>
 
   <!-- ========================================
+       GALLERY CAROUSEL — Projetos Realizados
+  ========================================= -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__track">
+      <div class="gallery__slide"><img src="assets/projeto-1.png" alt="Usina solar em galpão industrial" loading="lazy"></div>
+      <div class="gallery__slide"><img src="assets/projeto-2.png" alt="Equipe instalando painéis solares" loading="lazy"></div>
+      <div class="gallery__slide"><img src="assets/projeto-3.png" alt="Fazenda solar ao pôr do sol" loading="lazy"></div>
+      <div class="gallery__slide"><img src="assets/projeto-4.png" alt="Fábrica com telhado solar" loading="lazy"></div>
+      <div class="gallery__slide"><img src="assets/projeto-5.png" alt="Técnico conectando módulos solares" loading="lazy"></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="gallery__slide"><img src="assets/projeto-1.png" alt="Usina solar em galpão industrial" loading="lazy"></div>
+      <div class="gallery__slide"><img src="assets/projeto-2.png" alt="Equipe instalando painéis solares" loading="lazy"></div>
+      <div class="gallery__slide"><img src="assets/projeto-3.png" alt="Fazenda solar ao pôr do sol" loading="lazy"></div>
+      <div class="gallery__slide"><img src="assets/projeto-4.png" alt="Fábrica com telhado solar" loading="lazy"></div>
+      <div class="gallery__slide"><img src="assets/projeto-5.png" alt="Técnico conectando módulos solares" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- ========================================
        STEPS — Passo a Passo (W1-inspired)
   ========================================= -->
   <section class="steps" id="steps">
@@ -498,16 +507,19 @@
   </section>
 
   <!-- ========================================
-       CTA BANNER
+       CTA BANNER — Split Layout
   ========================================= -->
   <section class="cta-banner" id="contact">
-    <div class="cta-banner__inner">
+    <div class="cta-banner__image">
+      <img src="assets/cta-parceria.png" alt="Parceria B2B em energia solar" loading="lazy">
+    </div>
+    <div class="cta-banner__content">
       <span class="section-label">Pronto para economizar?</span>
       <h2 class="cta-banner__title reveal">
-        Simule gratuitamente o projeto de energia solar da sua empresa
+        Simule gratuitamente o projeto solar da sua empresa
       </h2>
       <p class="cta-banner__subtitle reveal">
-        Receba um estudo personalizado com projeção de economia e retorno do investimento.
+        Receba um estudo personalizado com projeção de economia e retorno do investimento. Nossos especialistas irão dimensionar a solução ideal para o seu negócio.
       </p>
       <div class="cta-banner__actions reveal">
         <a href="#" class="cta-banner__btn">
@@ -528,12 +540,7 @@
     <div class="footer__main">
       <div class="footer__brand">
         <div class="footer__brand-logo">
-          <svg width="36" height="36" viewBox="0 0 42 42" fill="none">
-            <circle cx="21" cy="21" r="20" stroke="#00D4AA" stroke-width="2"/>
-            <path d="M21 6 L21 21 L33 28" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="21" cy="21" r="5" fill="#00D4AA" opacity="0.3"/>
-          </svg>
-          <span>Solar<span class="accent">Prime</span></span>
+          <img src="assets/logo.svg" alt="" style="height: 60px;">
         </div>
         <p class="footer__brand-desc">
           Soluções em energia solar fotovoltaica para empresas que buscam economia, sustentabilidade e competitividade.
